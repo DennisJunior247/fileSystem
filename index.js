@@ -6,7 +6,7 @@ const getJsonData = async () => {
     const response = await fetch("http://jsonplaceholder.typicode.com/posts");
     const jsonData = await response.json();
 
-    fs.appendFile("./result/result.json", JSON.stringify(jsonData), (err) => {
+    fs.writeFile("./result/result.json", JSON.stringify(jsonData), (err) => {
       if (err) {
         console.log(err);
       } else {
